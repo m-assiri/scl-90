@@ -1,0 +1,115 @@
+<!-- <nav class="navbar fixed-top navbar-dark bg-primary">
+  <a class="navbar-brand" href="#!">Fixed top</a>
+</nav> -->
+
+<div class="rtl">
+<nav class="navbar navbar-light shadow-sm p-3 mb-1 rounded ">
+    <div class="container justify-content-center text-secondary form-inline ">
+      <div><h4>Questions page</h4></div>
+        <div class="container" *ngIf="patient ">
+            <div class="row">
+              <div class="col">ID: 
+                {{patient.patientNumber}}
+              </div>
+              <div class="col">Name: 
+                {{ patient.name}}
+              </div>
+              <div class="col">Age: 
+                {{ patient.age}}
+              </div>
+              <div class="col">Sex: 
+                {{ patient.sex}}
+              </div>
+            </div>
+          </div>
+    </div>
+  </nav>
+<!-- --------------------------- -->
+ 
+   
+ <div class="container shadow-sm p-3 mb-5" >
+  <div class="sticky2">  
+  <ul class="list-group-light">
+
+  <li class="sticky list-group-item" >
+  <span class=" row"> 
+      
+  <span class="col-lg-8 col-md-8 col-sm-12">   
+   ما مقدار معاناتك من الأعراض الآتية :
+  </span>
+   
+
+
+
+<span class="col-lg-4 col-md-4 col-sm-12-inline">  
+<span class="row">
+<span class="col-2">  
+<p>مطلقاً</p>
+</span>
+<span class="col-2">   
+<p>نادراً</p>
+</span>
+<span class="col-2">   
+<p>احياناً</p>
+</span>
+<span class="col-2">   
+<p>كثيراً</p>
+</span>
+<span class="col-2">   
+<p>دائماً</p>
+</span>
+</span> 
+</span> 
+</span>
+</li>
+
+
+
+</ul>
+ </div>
+<!-- --------------------------- -->
+
+    <!-- A fluid container that uses the full witdh -->
+ 
+<ul class="list-group-light bg ">
+  <li class="list-group-item " *ngFor="let item of data;let i=index"  [ngClass]="(i % 2 == 0) ? 'odd' : 'even'">
+  <span class="row"> 
+      
+  <span class="quise col-lg-8 col-md-8 col-sm-12">   
+   {{i+1}} - {{item}}
+  </span>
+   
+
+
+
+<span class="radio col-lg-4 col-md-4 col-sm-12">  
+<span class="row">
+<span class="col-2">  
+<input type="radio"   name="{{i+1}}" value="0"  (change)="radioChange($event)">
+</span>
+<span class="col-2">   
+<input type="radio"   name="{{i+1}}" value="1"  (change)="radioChange($event)">
+</span>
+<span class="col-2">   
+<input type="radio"   name="{{i+1}}" value="2"  (change)="radioChange($event)">
+</span>
+<span class="col-2">   
+<input type="radio"   name="{{i+1}}" value="3"  (change)="radioChange($event)">
+</span>
+<span class="col-2">   
+<input type="radio"   name="{{i+1}}" value="4"  (change)="radioChange($event)">
+</span>
+</span> 
+</span> 
+</span>
+</li>
+
+
+
+<li  class="list-group-item">
+<button class="btn btn-outline-primary btn-block text-cennter" (click)="calc()" >Save</button>
+</li>
+
+</ul>
+</div>
+</div>

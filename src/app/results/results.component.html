@@ -1,0 +1,218 @@
+
+
+<div class="con2 shadow-sm p-3 mb-1  rounded">
+<nav class="navbar navbar-light  text-secondary "><div class="container justify-content-center form-inline "><h4>Results page</h4></div></nav>
+<nav class="navbar navbar-light ">
+    
+<form class="form-inline ">
+  <input [(ngModel)] ="patientNumber" name = "patientNumber" class="form-control mr-sm-2" type="text" placeholder="Enter the ID number..."  [value] ="patientNumber" onfocus="this.value=''">
+  <button class="btn btn-outline-primary" (click)="getResult()" type="button">Search</button>
+</form>
+</nav>
+
+<nav class="navbar navbar-light  mb-1 rounded ">
+  <div class="container justify-content-center text-secondary form-inline ">
+    
+      <div class="container row" *ngIf="patient ">
+          
+            <div class="col">ID: 
+              {{patient.patientNumber}}
+            </div>
+            <div class="col">Name: 
+              {{ patient.name}}
+            </div>
+            <div class="col">Age: 
+              {{ patient.age}}
+            </div>
+            <div class="col">Sex: 
+              {{ patient.sex}}
+            </div>
+            <div class="col">City: 
+              {{ patient.city}}
+            </div>
+          
+        </div>
+  </div>
+</nav>
+</div>
+<div><p></p></div>
+
+  <div class="con3 text-center text-secondary font-weight-bold shadow-sm p-2 mb-1 rounded ">
+    <h3>The result</h3>
+
+<div class="text-center" *ngIf="patient">
+
+<div class="row justify-content-center">
+<div class="card-deck col-lg-6">   
+<div class="card ">
+<div class="card-header">
+<h6>Somatization SOM </h6>
+</div>
+<div class="card-body">
+<h4 class="card-title">{{patient.v1r}}</h4>
+<p class="card-text">الأعراض الجسمانية</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+  <h6>Obsessive-Compulsive O-C</h6>
+</div>
+<div class="card-body">
+<h4 class="card-title">{{patient.v2r}}</h4>
+<p class="card-text"> الوسواس القهري</p>
+</div>
+</div>
+</div>
+<div class="card-deck col-lg-6">
+<div class="card">
+<div class="card-header">
+  <h6>Interpersonal sensitivity INT</h6>
+</div>
+<div class="card-body">
+  <h4 class="card-title">{{patient.v3r}}</h4>
+  <p class="card-text"> الحساسية التفاعلية</p>
+</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h6>Depression DEP</h6>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{patient.v4r}}</h4>
+    <p class="card-text"> الإكتئاب</p>
+  </div>
+</div>
+</div>
+</div>
+<div class="row d-flex justify-content-center">
+<div class="card-deck col-lg-6">
+<div class="card">
+    <div class="card-header">
+      <h6>Anxiety ANX</h6>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{patient.v5r}}</h4>
+      <p class="card-text"> القلق</p>
+    </div>
+  </div>
+
+<div class="card">
+  <div class="card-header">
+    <h6>Hostility HOS</h6>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{patient.v6r}}</h4>
+    <p class="card-text"> العداوه</p>
+  </div>
+</div>
+</div>
+<div class="card-deck col-lg-6">
+<div class="card">
+<div class="card-header">
+  <h6>Phobic Anxiety PHOB</h6>
+</div>
+<div class="card-body">
+  <h4 class="card-title">{{patient.v7r}}</h4>
+  <p class="card-text"> قلق الخواف</p>
+</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h6>Paranoid Ideation PAR</h6>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{patient.v8r}}</h4>
+    <p class="card-text"> البارانويا التخيلية</p>
+  </div>
+</div>
+</div>
+</div>
+<div class="row d-flex justify-content-center">
+<div class="card-deck col-lg-6">
+<div class="card">
+    <div class="card-header">
+      <h6>Psychoticism PSY</h6>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{patient.v9r}}</h4>
+      <p class="card-text"> الذهانية</p>
+    </div>
+  </div>
+
+  <div class="card">
+      <div class="card-header">
+        <h6>Additional Items</h6>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">{{patient.v10r}}</h4>
+        <p class="card-text"> العبارات الاضافية</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-deck col-lg-6">
+<div class="card">
+<div class="card-header">
+  <h6>GT</h6>
+</div>
+<div class="card-body">
+<h4 class="card-title">{{patient.gt}}</h4>
+<p class="card-text"></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+  <h6>GSI</h6>
+</div>
+<div class="card-body">
+<h4 class="card-title">{{patient.gsi}}</h4>
+<p class="card-text"></p>
+</div>
+</div>
+  </div>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="card-deck col-lg-6">
+<div class="card">
+<div class="card-header">
+  <h6>PST</h6>
+</div>
+<div class="card-body">
+<h4 class="card-title">{{patient.pst}}</h4>
+<p class="card-text"></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+  <h6>PSDI</h6>
+</div>
+<div class="card-body">
+  <h4 class="card-title">{{patient.psdi}}</h4>
+  <p class="card-text"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+  <p></p>
+</div>
+  </div>
+
+  <div *ngIf="patient && patient.patientNumber"class="con1 shadow p-2 mb-1 rounded">
+      <h6 class="con1-h6 shadow-sm p-2 mb-1 rounded">Personal Information</h6>
+      <p>Name: {{ patient.name }}</p>  
+      <p>ID: {{patient.patientNumber}}</p>
+       <p>Age: {{ patient.age }}</p>
+       <p>Sex: {{ patient.sex }}</p>
+       <p>Social Status: {{ patient.socialStatus }}</p>
+       <p>Education Level: {{ patient.educationLevel }}</p>
+       </div>
+
+
+
+

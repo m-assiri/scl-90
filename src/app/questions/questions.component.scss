@@ -1,0 +1,39 @@
+.odd{
+    background-color:#ffffff;
+  }
+  .even{
+    background-color: #eaf2f8;
+  }
+  .navbar{
+    background: #eaf2f8;
+  }
+  .list-group{
+    background:  #eaf2f8;
+  }
+  .container{
+    background:  #eaf2f8;
+  }
+   
+ 
+.rtl{
+  text-align: right;
+  direction: rtl;
+}
+.sticky{
+  
+  
+    
+    background:rgba(230, 245, 250, 0.582);
+  
+     left: 0px;
+ 
+}
+
+.sticky2{
+  position: sticky ;
+  z-index: 1;
+  top: 80px;
+  padding-top: 60px;
+  background: rgba(255, 0, 0, 0.007); 
+  padding: 0px;
+}
